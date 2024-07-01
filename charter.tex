@@ -83,7 +83,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección de pesos de pollos en finca broiler por medio de visión por computadora. El trabajo tendrá un presupuesto preliminar estimado de 720 horas y un costo estimado de \$ 10,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección de pesos de pollos en finca broiler por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 720 horas y un costo estimado de \$ 10,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,7 +107,7 @@ Se adjunta a esta acta la planificación inicial.
 % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
 Empresas Melo S.A. es una empresa en Panamá con una integración vertical en la industria avícola. La compañía se encarga de todo el proceso productivo, desde la creación de alimento para pollos a partir de materia prima, pasando por la crianza de pollos tipo broiler (de engorde), gallinas ponedoras de huevo y pollos para reproducción, hasta llegar a una planta de sacrificio donde se procesan los pollos según la demanda. Finalmente, los productos pueden ser enviados a una planta de valor agregado donde se crean artículos como milanesas, nuggets, entre otros.
 
-El proyecto se enfoca en el segundo paso: la crianza de los pollos broiler. En las fincas, los pollos se crían en espacios, denominados fincas, que pueden albergar hasta 40.000 aves en 950 m². Actualmente, el peso de los pollos se determina mediante muestreos semanales de 100 a 300 aves, lo que representa menos del 1\% del total, un método que no cumple con los estándares precisos exigidos por el mercado. Para resolver este problema, se propone la instalación de cámaras especializadas en visión por computadora dentro de las fincas. Estas cámaras capturan imágenes de los pollos y, mediante modelos de inteligencia artificial, determinan el peso de cada ave.
+El proyecto se enfoca en el segundo paso: la crianza de los pollos broiler. En las fincas, los pollos se crían en espacios, denominados fincas, que pueden albergar hasta 40.000 aves en 950 m². Actualmente, el peso de los pollos se determina mediante muestreos semanales de 100 a 300 aves, lo que representa menos del 1\% del total, un método que no cumple con los estándares precisos exigidos por el mercado. Para resolver este problema, se propone la instalación de cámaras especializadas en CV dentro de las fincas. Estas cámaras capturan imágenes de los pollos y, mediante modelos de inteligencia artificial (IA), determinan el peso de cada ave.
 
 En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. El proceso comienza con las cámaras de video, que inician la detección de peso mediante el preprocesamiento de las imágenes. Estas imágenes se envían al primer modelo de segmentación y clasificación, cuyo resultado son recortes individuales de cada pollo detectado.
 
@@ -136,7 +136,7 @@ Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Cliente       & \clientename      &\empclientename	& Directora de operaciones (COO)	\\ \hline
 %Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-%Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & Kelvin Vega       &\empclientename   & Mantenimiento de fincas       	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
@@ -152,48 +152,40 @@ Usuario final & Diógenes Becerra         &\empclientename	& Vicepresidente de d
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 Tener una distribución más precisa del peso de los pollos en una finca ofrece varios beneficios. Primero, reemplaza un método manual de muestreo, lo que reduce el riesgo de que las aves se contagien con patógenos externos y ahorra tiempo a los trabajadores. Segundo, conocer el momento exacto en el que la parvada puede ser llevada a la planta de sacrificio permite aprovechar eficientemente el uso del tiempo en las fincas. Si se sacan antes de tiempo, no cumplen con la demanda del mercado, lo que conlleva consecuencias económicas; si se sacan tarde, se consume más agua y alimento de lo necesario, y no se utiliza el espacio de la finca para un siguiente lote. Un último valor agregado de este proyecto es el uso de las cámaras para el monitoreo remoto de las fincas, ya que actualmente no existe nada similar instalado.
+
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
+El proyecto contempla la parte de hardware y software a desarrollar para el diagrama en bloques especificado en la figura \ref{fig:diagBloques}. A desarrollar por el estudiante están las siguientes tareas:
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
-El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+\item Recibir las imágenes de las cámaras de video para iniciar el pipeline de preprocesamiento de las mismas.
+\item Implementación de un modelo que, por medio de técnicas de IA y CV, pueda distinguir la mayoría de los pollos que se encuentren presentes en una foto.
+	\begin{itemize}
+	\item Obtención de imágenes para el entrenamiento del modelo seleccionado.
+	\item Etiquetado de las imágenes para permitir aprendizaje supervisado.
+	\end{itemize}
+\item Preprocesamiento de las imágenes de salida del modelo anteriormente mencionado.
+\item Implementación de un modelo de IA capaz de predecir, por medio de características físicas y visuales de las aves, el peso de las mismas.
+	\begin{itemize}
+	\item Al igual que para el primer modelo, se incluye la obtención de imágenes y etiquetado de las mismas.
+	\end{itemize}
+\item Desarrollo estadístico sobre la distribución de pesos de la parvada.
+\item Creación de una interfaz que muestre a los usuarios finales la distribución y peso promedio de los pollos dentro de la finca.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
+A pesar de que está incluido en el alcance del proyecto, no será desarrollado por el estudiante la instalación de cámaras de video. Esto será tercerizado por \empclientename
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
-
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Se dispone de 16 horas semanales para el desarrollo del mismo.
+	\item Se tendrá acceso a un \textit{stream} continuo de video de todas las cámaras instaladas dentro de la finca. 
+	\item Se cuenta con una computadora con capacidad computacional suficiente, o un servicio tercerizado similar, para el entrenamiento de los modelos de IA.
+	\item Se tendrá disponibilidad limitada para ingresar a la finca y realizar trabajos dentro de la misma, dependiendo de la ocupación de la misma y la naturaleza de los trabajos a realizar.
+	\item Se acepta una precisión dentro de un margen razonable para la predicción de pesos de las aves. 
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
