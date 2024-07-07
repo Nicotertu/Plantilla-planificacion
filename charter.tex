@@ -58,7 +58,7 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                 & {26} de {junio} de 2024 \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
+2      & Se completa hasta el punto 9 inclusive                 & {4} de {julio} de 2024 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
@@ -83,7 +83,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección de pesos de pollos en finca broiler por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 720 horas y un costo estimado de \$ 10,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección de pesos de pollos en finca broiler por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ 10,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -105,13 +105,11 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-Empresas Melo S.A. es una empresa en Panamá con una integración vertical en la industria avícola. La compañía se encarga de todo el proceso productivo, desde la creación de alimento para pollos a partir de materia prima, pasando por la crianza de pollos tipo broiler (de engorde), gallinas ponedoras de huevo y pollos para reproducción, hasta llegar a una planta de sacrificio donde se procesan los pollos según la demanda. Finalmente, los productos pueden ser enviados a una planta de valor agregado donde se crean artículos como milanesas, nuggets, entre otros.
+Empresas Melo S.A. es una empresa de Panamá con una integración vertical en la industria avícola. La compañía se encarga de todo el proceso productivo, desde la creación de alimentos para pollos a partir de materia prima, pasando por la crianza de pollos tipo broiler (de engorde), gallinas ponedoras de huevo y pollos para reproducción, hasta llegar a una planta de sacrificio donde se procesan los pollos según la demanda. Finalmente, los productos pueden ser enviados a una planta de valor agregado donde se crean artículos como milanesas, nuggets, entre otros.
 
-El proyecto se enfoca en el segundo paso: la crianza de los pollos broiler. En las fincas, los pollos se crían en espacios, denominados fincas, que pueden albergar hasta 40.000 aves en 950 m². Actualmente, el peso de los pollos se determina mediante muestreos semanales de 100 a 300 aves, lo que representa menos del 1\% del total, un método que no cumple con los estándares precisos exigidos por el mercado. Para resolver este problema, se propone la instalación de cámaras especializadas en CV dentro de las fincas. Estas cámaras capturan imágenes de los pollos y, mediante modelos de inteligencia artificial (IA), determinan el peso de cada ave.
+El proyecto se enfoca en el segundo paso: la crianza de los pollos broiler. En las fincas, los pollos se crían en espacios, denominados fincas, que pueden albergar hasta 40.000 aves en 950 m². Actualmente, el peso de los pollos se determina mediante muestreos semanales de 100 a 300 ejemplos, lo que representa menos del 1\% del total, un método que no cumple con los estándares precisos exigidos por el mercado. Para resolver este problema, se propone la instalación de cámaras especializadas en \textit{computer vision} (CV) dentro de las fincas. Estas cámaras capturan imágenes de los pollos y mediante modelos de inteligencia artificial (IA) determinan el peso de cada ave.
 
-En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. El proceso comienza con las cámaras de video, que inician la detección de peso mediante el preprocesamiento de las imágenes. Estas imágenes se envían al primer modelo de segmentación y clasificación, cuyo resultado son recortes individuales de cada pollo detectado.
-
-A continuación, estos recortes alimentan el segundo modelo de predicción de peso, del cual se obtiene el peso individual de cada ave. Con esta información se calcula el peso promedio de los pollos en la finca y se determina la distribución de los mismos. Los resultados se envían a un sistema de monitoreo y reporte, que junto con la transmisión de video, es accesible para el personal de la finca. Esto permite supervisar el estado de los pollos y determinar el momento adecuado para enviarlos a la planta de sacrificio.
+En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. El proceso comienza con las cámaras de video, que inician la detección de peso mediante el preprocesamiento de las imágenes. Estas imágenes se envían al primer modelo de segmentación y clasificación, cuyo resultado son recortes individuales de cada pollo detectado. A continuación, estos recortes alimentan el segundo modelo de predicción de peso, del cual se obtiene el peso individual de cada ave. Con esta información se calcula el peso promedio de los pollos en la finca y se determina la distribución de los mismos. Los resultados se envían a un sistema de monitoreo y reporte, que junto con la transmisión de video, es accesible para el personal de la finca. Esto permite supervisar el estado de los pollos y determinar el momento adecuado para enviarlos a la planta de sacrificio.
 
 \begin{figure}[htpb]
 \centering 
@@ -146,12 +144,12 @@ Usuario final & Diógenes Becerra         &\empclientename	& Vicepresidente de d
 \end{table}
 
 \begin{itemize}
-	\item Usuario final: Se coloca al vicepresidente porque cumple con la figura de representar la división. Sin embargo, los usuarios finales son todo el personal operativo de la finca.
+	\item Usuario final: se coloca al vicepresidente porque cumple con la figura de representar la división. Sin embargo, los usuarios finales son todo el personal operativo de la finca.
 \end{itemize}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
-Tener una distribución más precisa del peso de los pollos en una finca ofrece varios beneficios. Primero, reemplaza un método manual de muestreo, lo que reduce el riesgo de que las aves se contagien con patógenos externos y ahorra tiempo a los trabajadores. Segundo, conocer el momento exacto en el que la parvada puede ser llevada a la planta de sacrificio permite aprovechar eficientemente el uso del tiempo en las fincas. Si se sacan antes de tiempo, no cumplen con la demanda del mercado, lo que conlleva consecuencias económicas; si se sacan tarde, se consume más agua y alimento de lo necesario, y no se utiliza el espacio de la finca para un siguiente lote. Un último valor agregado de este proyecto es el uso de las cámaras para el monitoreo remoto de las fincas, ya que actualmente no existe nada similar instalado.
+El propósito de este proyecto es desarrollar un sistema de monitoreo mediante cámaras de video instaladas en una finca, capaz de predecir el peso de los pollos utilizando técnicas de IA y VC. Este sistema ofrecerá una distribución de peso más precisa que el método de muestreo actual, eliminará el proceso manual de muestreo, permitirá conocer el momento exacto en el que se puede llevar la parvada a la planta de sacrificio y reducirá el consumo de alimento y agua de los pollos.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -159,7 +157,7 @@ El proyecto contempla la parte de hardware y software a desarrollar para el diag
 
 \begin{itemize}
 \item Recibir las imágenes de las cámaras de video para iniciar el pipeline de preprocesamiento de las mismas.
-\item Implementación de un modelo que, por medio de técnicas de IA y CV, pueda distinguir la mayoría de los pollos que se encuentren presentes en una foto.
+\item Implementación de un modelo que, por medio de técnicas de IA y CV, pueda distinguir por lo menos un 80\% de los pollos que se encuentren presentes en una foto.
 	\begin{itemize}
 	\item Obtención de imágenes para el entrenamiento del modelo seleccionado.
 	\item Etiquetado de las imágenes para permitir aprendizaje supervisado.
@@ -181,119 +179,137 @@ Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
 	\item Se dispone de 16 horas semanales para el desarrollo del mismo.
-	\item Se tendrá acceso a un \textit{stream} continuo de video de todas las cámaras instaladas dentro de la finca. 
+	\item Se tendrá acceso a un stream continuo de video de todas las cámaras instaladas dentro de la finca. 
 	\item Se cuenta con una computadora con capacidad computacional suficiente, o un servicio tercerizado similar, para el entrenamiento de los modelos de IA.
 	\item Se tendrá disponibilidad limitada para ingresar a la finca y realizar trabajos dentro de la misma, dependiendo de la ocupación de la misma y la naturaleza de los trabajos a realizar.
-	\item Se acepta una precisión dentro de un margen razonable para la predicción de pesos de las aves. 
+	\item Se acepta una precisión dentro de un margen razonable de $\pm$10\% para la predicción de pesos de las aves. 
 \end{itemize}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben enumerarse y de ser posible estar agrupados por afinidad, por ejemplo:
-
 \begin{enumerate}
-	\item Requerimientos funcionales:
+	\item Requerimientos de entrenamiento
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+		\item Se deberá instalar cámaras de video dentro de la finca.
+		\item Se deberá levantar la información de entrenamiento de los modelos desde cero y etiquetarla.
 		\end{enumerate}
-	\item Requerimientos de documentación:
+	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item Requerimiento 1.
-			\item Requerimiento 2 (prioridad menor)
+		\item El sistema será capaz de identificar a la mayoría de pollos que aparece en cada cámara de video.
+		\item El sistema será capaz de segmentar por medio de coordenadas cada una de las aves.
+		\item El sistema será capaz de detectar características visuales de cada pollo.
+		\item El sistema será capaz de predecir un peso a cada imagen de ave que identifique.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimientos de documentación
+		\begin{enumerate}
+		\item Se deberá elaborar una memoria técnica para el proyecto.
+		\item Se deberá documentar todo el procesamiento de imágenes que se realice.
+		\item El proyecto deberá tener un control de versiones por medio de un repositorio de GitHub o similar para mantener un control de versiones.
+		\end{enumerate}
+	\item Requerimiento de desempeño
+		\begin{enumerate}
+		\item El procesamiento de video y las detecciones será en tiempo real.
+		\item El sistema será capaz de predecir con un margen de $\pm$10\% el peso de cada pollo.
+		\end{enumerate}
+	\item Requerimientos de la interfaz
+		\begin{enumerate}
+		\item La interfaz deberá mostrar la distribución de pesos de los pollos.
+		\item La interfaz deberá mostrar el peso promedio estimado de la parvada.
+		\item La interfaz deberá mostrar el peso promedio de la parvada a lo largo del tiempo.
+		\item Se deberá poder interactuar con la interfaz para dar inicio a un nuevo lote de pollos.
+		\end{enumerate}
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-\textbf{¡¡¡No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!}
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
 Descripción: en esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 
 Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia.
 
 El formato propuesto es: 
 \begin{enumerate}
-\item ``Como [rol] quiero [tal cosa] para [tal otra cosa]."
+\item Como gerente de producción, quiero ver la evolución del peso promedio de la parvada a lo largo del tiempo en la interfaz, para detectar tendencias y hacer ajustes en la crianza.
 
-\textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
+\textit{Story points}: 5 (complejidad: 2, dificultad: 2, incertidumbre: 1)
+\item Como supervisor de la finca, quiero interactuar con la interfaz del sistema para iniciar un nuevo lote de pollos, para asegurar un manejo ordenado y documentado de cada ciclo de producción.
+
+\textit{Story points}: 3 (complejidad: 1, dificultad: 1, incertidumbre: 1)
+\item Como trabajador de la finca, quiero que el sistema prediga el peso de cada pollo basado en las imágenes, para tomar decisiones informadas sobre el momento adecuado para llevar las aves a la planta de sacrificio.
+
+\textit{Story points}: 13 (complejidad: 5, dificultad: 4, incertidumbre: 3)
+\item Como gerente de operaciones, quiero que se guarde la información al iniciar un lote nuevo, para llevar un histórico de parvadas anteriores.
+
+\textit{Story points}: 13 (complejidad: 3, dificultad: 2, incertidumbre: 4)
 \end{enumerate}
-\end{consigna}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
 Los entregables del proyecto son (ejemplo):
 
 \begin{itemize}
 	\item Manual de usuario.
-	\item Diagrama de circuitos esquemáticos.
 	\item Código fuente del firmware.
-	\item Diagrama de instalación.
+	\item Interfaz web para ver el peso promedio, cambio en el tiempo de la misma y distribución de pesos actual.
 	\item Memoria del trabajo final.
-	\item etc...
 \end{itemize}
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1 (suma h)
+\item Compra de equipos (35 horas)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Comprar las cámaras de video a utilizar e instalarlas dentro de la finca. (32 horas)
+	\item Comprar un ordenador o contratar un servicio en la nube para el entrenamiento de los modelos de IA. (asíncrono, 3 horas)
 	\end{enumerate}
-\item Grupo de tareas 2 (suma h)
+\item Toma de datos (170 horas)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Capturar imágenes de pollos en diferentes condiciones de iluminación y ángulos. (75 horas)
+	\item Asegurar una cantidad suficiente de imágenes para una segmentación robusta. (10 horas)
+	\item Capturar imágenes de pollos junto con mediciones precisas de su peso. (75 horas)
+	\item Garantizar variedad en el tamaño y peso de los pollos en las imágenes. (10 horas)
 	\end{enumerate}
-\item Grupo de tareas 3 (suma h)
+\item Etiquetado de datos (30 horas)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
+	\item Utilizar software de etiquetado para marcar y clasificar cada pollo en las imágenes. (15 horas)
+	\item Asociar cada imagen con el peso real del pollo. (15 horas)
+	\end{enumerate}
+\item Desarrollo del pipeline de preprocesamiento (30 horas)
+	\begin{enumerate}
+	\item Escribir códigos para limpiar y preparar las imágenes. (20 horas)
+	\item Aplicar técnicas de aumento de datos para mejorar la robustez del modelo. (10 horas)
+	\end{enumerate}
+\item Entrenamiento del modelo de segmentación y clasificación (120 horas)
+	\begin{enumerate}
+	\item Seleccionar y configurar el modelo de IA apropiado. (20 horas)
+	\item Entrenar el modelo utilizando las imágenes etiquetadas. (100 horas)
+	\end{enumerate}
+\item Entrenamiento del modelo de predicción de peso (75 horas)
+	\begin{enumerate}
+	\item Seleccionar y configurar el modelo de IA apropiado. (15 horas)
+	\item Entrenar el modelo utilizando las imágenes etiquetadas con peso. (60 horas)
+	\end{enumerate}
+\item Desarrollo de la interfaz web (75 horas)
+	\begin{enumerate}
+	\item Desarrollar la interfaz utilizando tecnologías web (como HTML y CSS). (15 horas)
+	\item Integrar el \textit{backend} para mostrar datos en tiempo real. (25 horas)
+	\item Implementar gráficos para mostrar el peso promedio. (5 horas)
+	\item Implementar gráficos históricos para mostrar la evolución del peso. (5 horas)
+	\item Desarrollar funcionalidad para iniciar y gestionar nuevos lotes de pollos. (5 horas)
+	\item Realizar pruebas de usabilidad con los usuarios finales. (20 horas)
+	\end{enumerate}
+\item Documentación (65 horas)
+	\begin{enumerate}
+	\item Documentar el etiquetado y preprocesamiento de imágenes. (15 horas)
+	\item Documentar el entrenamiento y evaluación de los modelos de IA. (35 horas)
+	\item Documentar el desarrollo e implementación de la interfaz web. (15 horas)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: tantas.
-
-\textbf{¡Importante!:} la unidad de horas es h y va separada por espacio del número. Es incorrecto escribir ``23hs".
-
-\textbf{Se recomienda que no haya ninguna tarea que lleve más de 40 h.} De ser así se recomienda dividirla en tareas de menor duración.
-
-\end{consigna}
+Cantidad total de horas: 600 horas.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
