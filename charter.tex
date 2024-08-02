@@ -519,18 +519,18 @@ A continuación se listan los potenciales riesgos que se podrían presentar en e
 
 a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
  
-Riesgo 1: Poder computacional reducido para entrenamiento de modelos.
+Riesgo 1: poder computacional reducido para entrenamiento de modelos.
 \begin{itemize}
 	\item Severidad (S): 5. \\
-	Riesgo de severidad media, la repercusión de no contar con gran poder computacional afecta los tiempos de entrenamiento mas no el desempeño de los modelos.
+	Riesgo de severidad media. La repercusión de no contar con gran poder computacional afecta los tiempos de entrenamiento mas no el desempeño de los modelos.
 	\item Probabilidad de ocurrencia (O): 2. \\
 	Se hará una investigación previa sobre los requisitos computacionales y el equipo a comprar/servicio a contratar, por lo que la posibilidad de este riesgo es baja.
 \end{itemize}   
 
-Riesgo 2: Retrasos en la entrega e instalación de equipos.
+Riesgo 2: retrasos en la entrega e instalación de equipos.
 \begin{itemize}
 	\item Severidad (S): 3. \\
-	Riesgo de severidad baja, ya que se pueden ir adelantando otras tareas mientras los equipos se compran y son instalados.
+	Riesgo de severidad baja. Se pueden ir adelantando otras tareas mientras los equipos se compran y son instalados.
 	\item Probabilidad de ocurrencia (O): 7. \\
 	Los proveedores pueden experimentar problemas logísticos, especialmente en contextos internacionales, por lo que se asigna una probabilidad alta.
 \end{itemize}
@@ -538,23 +538,23 @@ Riesgo 2: Retrasos en la entrega e instalación de equipos.
 Riesgo 3: Problemas de conectividad.
 \begin{itemize}
 	\item Severidad (S):  7.\\
-	La pérdida de conectividad puede interrumpir la transmisión de datos en tiempo real, afectando la capacidad de respuesta del sistema.
+	La pérdida de conectividad puede interrumpir la transmisión de datos en tiempo real, lo que afecta la capacidad de respuesta del sistema.
 	\item Probabilidad de ocurrencia (O): 5.\\
 	Las fincas pueden tener problemas de conectividad debido a infraestructura limitada por su naturaleza rural.
 \end{itemize}
 
-Riesgo 4: Deterioro de cámaras dentro de la finca.
+Riesgo 4: deterioro de cámaras dentro de la finca.
 \begin{itemize}
 	\item Severidad (S):  8.\\
 	Las cámaras son fundamentales para el desarrollo el proyecto ya que ellas son las que obtienen los datos de entrada de los modelos de IA.
 	\item Probabilidad de ocurrencia (O): 6.\\
-	El ambiente dentro de la finca es hostil para componentes electrónicos por la gran humedad en aire y orina de los pollos.
+	El ambiente dentro de la finca es hostil para componentes electrónicos por la gran humedad en el aire y la orina de los pollos.
 \end{itemize}
 
-Riesgo 5: Precisión baja del sistema para detectar peso de los pollos.
+Riesgo 5: precisión baja del sistema para detectar peso de los pollos.
 \begin{itemize}
 	\item Severidad (S):  8.\\
-	El objetivo principal del sistema es determinar el momento perfecto para llevar los pollos a la planta de sacrificio, una baja precisión llevaría a perdidas o insatisfacción de los clientes.
+	El objetivo principal del sistema es determinar el momento perfecto para llevar los pollos a la planta de sacrificio. Una baja precisión llevaría a perdidas o insatisfacción de los clientes.
 	\item Probabilidad de ocurrencia (O): 3.\\
 	La precisión de los modelos se compara con los métodos actuales de muestreo, los cuales no son representativos de la parvada. El estado del arte en cuanto a modelos de IA para segmentación de instancias y detección de features son prometedores.
 \end{itemize}
@@ -584,15 +584,15 @@ Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplic
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 3: Desarrollar la interfaz del sistema de modo que se pueda acceder a ella tanto remota como localmente.
+Riesgo 3: desarrollar la interfaz del sistema de modo que se pueda acceder a ella tanto remota como localmente.
   \begin{itemize}
 	\item Severidad (S*): 3.
           El personal de la finca utiliza medios que no requieren Internet para comunicarse entre ellos, por lo que se puede revisar el sistema localmente en la finca en caso de perdidas de conexión.
 	\item Probabilidad de ocurrencia (O*): 5.
-          La ocurrencia de los problemas de conexión son por la naturaleza rural de las fincas y disminuirlo implicaría hablar con los proveedores del servicio, lo cual escapa del alcance del proyecto.
+          La ocurrencia de los problemas de conexión se debe a la naturaleza rural de las fincas y disminuirlo implicaría hablar con los proveedores del servicio, lo cual escapa del alcance del proyecto.
 	\end{itemize}
 
-Riesgo 4: Comprar cámaras diseñadas para entornos hostiles.
+Riesgo 4: comprar cámaras diseñadas para entornos hostiles.
   \begin{itemize}
 	\item Severidad (S*): 8.
           Daños en las cámaras sigue siendo devastador para el sistema.
@@ -605,10 +605,8 @@ Riesgo 4: Comprar cámaras diseñadas para entornos hostiles.
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
-
 \begin{itemize} 
-\item Req \#1: Precisión del sistema de detección de peso.
+\item Req \#1: precisión del sistema de detección de peso.
 	\begin{itemize}
 	\item Verificación: comprobar las predicciones de peso arrojadas por el sistema contra los datos estadísticos de antiguas parvadas que mantiene el personal de las fincas.
 	\item Validación: mostrarle al cliente pesando pollos manualmente y comparándolo contra las predicciones del sistema.
@@ -616,7 +614,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#2: Efectividad en detección de instancias de pollos.
+\item Req \#2: efectividad en detección de instancias de pollos.
 	\begin{itemize}
 	\item Verificación: verificar manual y visualmente que se identifique el porcentaje de pollos acordado en las imágenes capturadas por las cámaras.
 	\item Validación: mostrarle al cliente los resultados del sistema y asegurar su satisfacción.
@@ -624,7 +622,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#3: Durabilidad de las cámaras.
+\item Req \#3: durabilidad de las cámaras.
 	\begin{itemize}
 	\item Verificación: inspecciones visuales de las cámaras durante el desarrollo del proyecto.
 	\item Validación: confirmar con el cliente que las cámaras funcionan correctamente después de un periodo de prueba en la finca.
@@ -632,7 +630,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#4: Facilidad de uso de la interfaz.
+\item Req \#4: facilidad de uso de la interfaz.
 	\begin{itemize}
 	\item Verificación: realizar pruebas de usabilidad con usuarios representativos y recopilar feedback.
 	\item Validación: obtener aprobación del cliente mediante sesiones de capacitación y uso de la interfaz.
@@ -640,7 +638,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#5: Resiliencia a fallos de conectividad.
+\item Req \#5: resiliencia a fallos de conectividad.
 	\begin{itemize}
 	\item Verificación: simular fallos de conectividad y evaluar cómo responde el sistema.
 	\item Validación: asegurarse de que el cliente está satisfecho con el desempeño del sistema durante periodos de conectividad intermitente en la finca.
@@ -648,7 +646,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#6: Mantenimiento y soporte técnico.
+\item Req \#6: mantenimiento y soporte técnico.
 	\begin{itemize}
 	\item Verificación: revisar los planes de mantenimiento y las capacidades de soporte técnico
 	\item Validación: elaborar un check list del mantenimiento a realizar y obtener la aprobación del cliente.
@@ -656,7 +654,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#7: Escalabilidad del sistema.
+\item Req \#7: escalabilidad del sistema.
 	\begin{itemize}
 	\item Verificación: realizar pruebas que demuestren que el sistema puede manejar un aumento en la carga sin degradar el desempeño.
 	\item Validación: confirmar con el cliente que el sistema puede expandirse, ya sea a otras fincas o colocando más cámaras, conforme a sus necesidades futuras.
@@ -664,7 +662,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#8: Tiempo de respuesta del sistema.
+\item Req \#8: tiempo de respuesta del sistema.
 	\begin{itemize}
 	\item Verificación: medir el tiempo de procesamiento de las imágenes y la generación de resultados. 
 	\item Validación: realizar pruebas en condiciones reales de uso y confirmar con el cliente que el sistema cumple con los tiempos de respuesta esperados.
@@ -672,7 +670,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#9: Funcionamiento continuo del sistema.
+\item Req \#9: funcionamiento continuo del sistema.
 	\begin{itemize}
 	\item Verificación: simular fallos de fluido eléctrico y comprobar que el sistema no requiere manipulación para restablecerse.
 	\item Validación: asegurarse de que el cliente está satisfecho con el desempeño del sistema durante fallas en el fluido eléctrico  en la finca.
@@ -680,7 +678,7 @@ Elija al menos diez requerimientos que a su criterio sean los más importantes/c
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#10: Documentación.
+\item Req \#10: documentación.
 	\begin{itemize}
 	\item Verificación: crear manuales de usuario detallados y asegurar que sea comprensible.
 	\item Validación: presentar la documentación al cliente y asegurar su satisfacción con a la misma.
