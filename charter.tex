@@ -8,7 +8,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Detección de peso de pollos en fincas broiler} 
+\titulo{Detección de errores en la línea de producción de nuggets} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -30,9 +30,9 @@
 \cliente{Ing. Marylin Melo de Simons}
 \empresaCliente{Empresas Melo S.A.}
  
-\fechaINICIO{19 de junio de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{17 de agosto de 2024} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{31 de enero de 2025}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{27 de agosto de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{15 de octubre de 2024} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{1 de marzo de 2025}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -60,10 +60,10 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                 & {26} de {junio} de 2024 \\ \hline
-2      & Se completa hasta el punto 9 inclusive                 & {4} de {julio} de 2024 \\ \hline
-3      & Se completa hasta el punto 12 inclusive                 & {14} de {julio} de 2024 \\ \hline
-4      & Se completa hasta el punto 15 inclusive                 & {23} de {julio} de 2024 \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & {9} de {septiembre} de 2024 \\ \hline
+2      & Se completa hasta el punto 9 inclusive                 & {9} de {septiembre} de 2024 \\ \hline
+%3      & Se completa hasta el punto 12 inclusive                 & {14} de {julio} de 2024 \\ \hline
+%4      & Se completa hasta el punto 15 inclusive                 & {23} de {julio} de 2024 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
@@ -88,7 +88,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección de pesos de pollos en finca broiler por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 640 horas y un costo estimado de \$19,500.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 500 horas y un costo estimado de \$4,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -110,9 +110,62 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-Empresas Melo S.A. es una empresa de Panamá con una integración vertical en la industria avícola. La compañía se encarga de todo el proceso productivo, desde la creación de alimentos para pollos a partir de materia prima, pasando por la crianza de pollos tipo broiler (de engorde), gallinas ponedoras de huevo y pollos para reproducción, hasta llegar a una planta de sacrificio donde se procesan los pollos según la demanda. Finalmente, los productos pueden ser enviados a una planta de valor agregado donde se crean artículos como milanesas, nuggets, entre otros.
+Empresas Melo S.A. es una empresa de Panamá con una integración vertical en la industria avícola. La compañía se encarga de todo el proceso productivo, desde la creación de alimentos para pollos a partir de materia prima, pasando por la crianza de pollos de engorde, gallinas ponedoras de huevo y pollos para reproducción, hasta llegar a una planta de sacrificio donde se procesan los pollos según la demanda. Finalmente, los productos pueden ser enviados a una planta de valor agregado donde se crean artículos como nuggets, milanesas, entre otros.
 
-El proyecto se enfoca en el segundo paso: la crianza de los pollos broiler. En las fincas, los pollos se crían en espacios, denominados fincas, que pueden albergar hasta 40.000 aves en 950 m². Actualmente, el peso de los pollos se determina mediante muestreos semanales de 100 a 300 ejemplos, lo que representa menos del 1\% del total, un método que no cumple con los estándares precisos exigidos por el mercado. Para resolver este problema, se propone la instalación de cámaras especializadas en \textit{computer vision} (CV) dentro de las fincas. Estas cámaras capturan imágenes de los pollos y mediante modelos de inteligencia artificial (IA) determinan el peso de cada ave.
+El proyecto se enfoca en la planta de valor agregado, específicamente en la línea de producción de nuggets de pollo. El proceso de producción de los nuggets se compone de las siguientes etapas:
+
+\begin{enumerate}
+	\item Moler pollo
+	\item Darle forma de nugget
+	\item Aplicar una primera mezcla
+	\item Aplicar harina
+	\item Aplicar una segunda mezcla
+	\item Freír el nugget
+	\item Congelar el nugget
+	\item Empacar y etiquetar	
+\end{enumerate}
+
+Todo este proceso se realiza en una sola línea continua, donde cada paso es llevado a cabo por un equipo diferente. El transporte del producto entre los distintos equipos se efectúa mediante cintas transportadoras, y en las transiciones entre las cintas ocurren dos cambios importantes: de altura y de velocidad. Estos cambios de altura y velocidad, junto con errores dentro de los mismos equipos, engloban casi en su totalidad a las causas por las cuales algunos nuggets no se procesan correctamente. 
+
+Actualmente, el porcentaje de producto que no se procesa adecuadamente es aproximadamente  4\%. Aunque este porcentaje no es alto, dado el gran volumen de producción, estas pérdidas pueden llegar a representar 27 toneladas de nuggets mensualmente. Sin embargo, el producto no se desperdicia: una parte se reprocesa y otra parte se vende a un costo menor. Ambos métodos tienen desventajas:
+
+\begin{itemize}
+	\item Reprocesamiento: La energía que se utilizó debe ser invertida nuevamente.
+	\item Venta a menor costo: Resulta en una ganancia menor por unidad de energía y materia prima utilizada.
+\end{itemize}
+
+Como esta es una línea de producción activa, de operación continua y de gran relevancia, hacer ajustes y cambios en la misma no es sencillo ni económico, y requiere coordinación. Para saber dónde enfocar los esfuerzos, se propone la instalación de cámaras especializadas en \textit{computer vision} (CV) en varios puntos de la línea de producción. Estas cámaras capturan imágenes de los nuggets y mediante un modelo de inteligencia artificial (IA) se clasifica los nuggets en distintas categorias:
+
+\begin{itemize}
+	\item Inconsistencia en la fritura.
+	\item Nuggets montados uno encima del otro.
+	\item Mal corte del pollo molido.
+	\item Mal forma del nugget.
+	\item Nugget correcto.
+\end{itemize}
+
+En la figura \ref{fig:inconsistencia}, figura \ref{fig:malCorte} y figura \ref{fig:montaje} se pueden ver tres casos de clasificación.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.65\textwidth]{./Figuras/INCONSISTENCIA.jpg}
+\caption{Nugget con fritura inconsistente.}
+\label{fig:inconsistencia}
+\end{figure}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.65\textwidth]{./Figuras/MAL CORTE.jpg}
+\caption{Nugget con mal corte del pollo molido.}
+\label{fig:malCorte}
+\end{figure}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.65\textwidth]{./Figuras/MONTAJE.jpg}
+\caption{Nuggets montados uno encima del otro.}
+\label{fig:montaje}
+\end{figure}
 
 En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. El proceso comienza con las cámaras de video, que inician la detección de peso mediante el preprocesamiento de las imágenes. Estas imágenes se envían al primer modelo de segmentación y clasificación, cuyo resultado son recortes individuales de cada pollo detectado. A continuación, estos recortes alimentan el segundo modelo de predicción de peso, del cual se obtiene el peso individual de cada ave. Con esta información se calcula el peso promedio de los pollos en la finca y se determina la distribución de los mismos. Los resultados se envían a un sistema de monitoreo y reporte, que junto con la transmisión de video, es accesible para el personal de la finca. Esto permite supervisar el estado de los pollos y determinar el momento adecuado para enviarlos a la planta de sacrificio.
 
