@@ -88,7 +88,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 500 horas y un costo estimado de \$4,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 460 horas y un costo estimado de \$4,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -148,30 +148,36 @@ En la figura \ref{fig:inconsistencia}, figura \ref{fig:malCorte} y figura \ref{f
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/INCONSISTENCIA.jpg}
+\setlength{\fboxsep}{0pt}
+\setlength{\fboxrule}{0.1pt}
+\fbox{\includegraphics[height=0.2\textheight]{./Figuras/INCONSISTENCIA.jpg}}
 \caption{Nugget con fritura inconsistente.}
 \label{fig:inconsistencia}
 \end{figure}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/MAL CORTE.jpg}
+\setlength{\fboxsep}{0pt}
+\setlength{\fboxrule}{0.1pt}
+\fbox{\includegraphics[width=.65\textwidth]{./Figuras/MAL CORTE.jpg}}
 \caption{Nugget con mal corte del pollo molido.}
 \label{fig:malCorte}
 \end{figure}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/MONTAJE.jpg}
+\setlength{\fboxsep}{0pt}
+\setlength{\fboxrule}{0.1pt}
+\fbox{\includegraphics[width=.65\textwidth]{./Figuras/MONTAJE.jpg}}
 \caption{Nuggets montados uno encima del otro.}
 \label{fig:montaje}
 \end{figure}
 
-En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. El proceso comienza con las cámaras de video, que inician la detección de peso mediante el preprocesamiento de las imágenes. Estas imágenes se envían al primer modelo de segmentación y clasificación, cuyo resultado son recortes individuales de cada pollo detectado. A continuación, estos recortes alimentan el segundo modelo de predicción de peso, del cual se obtiene el peso individual de cada ave. Con esta información se calcula el peso promedio de los pollos en la finca y se determina la distribución de los mismos. Los resultados se envían a un sistema de monitoreo y reporte, que junto con la transmisión de video, es accesible para el personal de la finca. Esto permite supervisar el estado de los pollos y determinar el momento adecuado para enviarlos a la planta de sacrificio.
+En la figura \ref{fig:diagBloques} se muestra el diagrama en bloques del sistema. El proceso comienza con la captura de imágenes mediante cámaras de video ubicadas estratégicamente en los puntos críticos de la línea de producción. Estas imágenes se someten a un preprocesamiento para garantizar una entrada uniforme al modelo de clasificación. El modelo identifica la posición de los nuggets en la cinta transportadora y los clasifica en las categorías previamente definidas. A cada nugget se le realiza un seguimiento, y se establece un umbral que, una vez cruzado, asegura que el nugget sea contado solo una vez para evitar duplicados. Finalmente, se genera un reporte que detalla el conteo por zona (según la cámara) de cada clase de nugget. Tanto los resultados como el video en vivo de las cámaras son accesibles al personal de la planta, lo que permite una supervisión constante del proceso.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.85\textwidth]{./Figuras/diagBloques2.png}
+\includegraphics[width=.85\textwidth]{./Figuras/diagBloques3.png}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
@@ -187,27 +193,28 @@ En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 \begin{tabularx}{\linewidth}{@{}|l|X|X|X|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-%Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	& Directora de operaciones (COO)	\\ \hline
-%Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores & Kelvin Vega       &\empclientename   & Mantenimiento de fincas       	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
+Rol          	& Nombre y Apellido 	& Organización 		& Puesto 	\\ \hline
+%Auspiciante   	&                   	&              		&        	\\ \hline
+Cliente       	& \clientename      	&\empclientename	& Directora de operaciones (COO)	\\ \hline
+%Impulsor     	&                   	&              		&        	\\ \hline
+Responsable   	& \authorname      		& FIUBA        		& Alumno 	\\ \hline
+Colaboradores 	& Gustavo Trejos, 
+				  Jose Peralta      	&\empclientename   	& Personal de mantenimiento       	\\ \hline
+Orientador    	& \supname	     		& \pertesupname 	& Director del Trabajo Final \\ \hline
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
-Usuario final & Diógenes Becerra         &\empclientename	& Vicepresidente de división Producción       	\\ \hline
+Usuario final & Roberto Tribaldos         &\empclientename	& Vicepresidente de división Valor Agregado       	\\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{itemize}
-	\item Usuario final: se coloca al vicepresidente porque cumple con la figura de representar la división. Sin embargo, los usuarios finales son todo el personal operativo de la finca.
+	\item Usuario final: se coloca al vicepresidente porque cumple con la figura de representar la división. Sin embargo, los usuarios finales son todo el personal operativo de la línea de producción.
 \end{itemize}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
-El propósito de este proyecto es desarrollar un sistema de monitoreo mediante cámaras de video instaladas en una finca, capaz de predecir el peso de los pollos utilizando técnicas de IA y CV. Este sistema ofrecerá una distribución de peso más precisa que el método de muestreo actual, eliminará el proceso manual de muestreo, permitirá conocer el momento exacto en el que se puede llevar la parvada a la planta de sacrificio y reducirá el consumo de alimento y agua de los pollos.
+El propósito de este proyecto es desarrollar un sistema de clasificación mediante cámaras de video instaladas en la línea de producción de nuggets, capaz de detectar, clasificar, dar seguimiento y conteo utilizando técnicas de IA y CV. Este sistema permitirá establecer en qué parte de la producción se está dando la mayor cantidad de errores, lo que permitirá al equipo de mantenimiento saber dónde concentrar sus esfuerzos para disminuir los errores. 
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -215,18 +222,17 @@ El proyecto contempla la parte de hardware y software a desarrollar para el diag
 
 \begin{itemize}
 \item Recibir las imágenes de las cámaras de video para iniciar el pipeline de preprocesamiento de las mismas.
-\item Implementación de un modelo que, por medio de técnicas de IA y CV, pueda distinguir por lo menos un 80\% de los pollos que se encuentren presentes en una foto.
+\item Implementación de un modelo que, por medio de técnicas de IA y CV, pueda clasificar por lo menos un 90\% de los nuggets que se encuentren presentes en una foto.
 	\begin{itemize}
 	\item Obtención de imágenes para el entrenamiento del modelo seleccionado.
 	\item Etiquetado de las imágenes para permitir aprendizaje supervisado.
+	\item Cada cámara debe darle seguimiento los nuggets y se debe definir un umbral que, una vez cruzado, haga el conteo. Así se evitan duplicados.
 	\end{itemize}
-\item Preprocesamiento de las imágenes de salida del modelo anteriormente mencionado.
-\item Implementación de un modelo de IA capaz de predecir, por medio de características físicas y visuales de las aves, el peso de las mismas.
+\item Desarrollo de un reporte que indique, por zona (y por ende por cámara), la cantidad de cada categoría de nugget.
+\item Creación de una interfaz que muestre a los usuarios finales la distribución de clases en vivo de la línea de producción.
 	\begin{itemize}
-	\item Al igual que para el primer modelo, se incluye la obtención de imágenes y etiquetado de las mismas.
-	\end{itemize}
-\item Desarrollo estadístico sobre la distribución de pesos de la parvada.
-\item Creación de una interfaz que muestre a los usuarios finales la distribución y peso promedio de los pollos dentro de la finca.
+		\item Al mostrar la distribución de clases, se mostrará qué porcentaje corresponde a nuggets correctamente producidos vs nugget con algun tipo de error, asi como un desglose de los errores por su tipo.
+	\end{itemize}	
 \end{itemize}
 
 A pesar de que está incluido en el alcance del proyecto, no será desarrollado por el estudiante la instalación de cámaras de video. Esto será tercerizado por \empclientename
@@ -236,11 +242,12 @@ A pesar de que está incluido en el alcance del proyecto, no será desarrollado 
 Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Se dispone de 16 horas semanales para el desarrollo del mismo.
-	\item Se tendrá acceso a un stream continuo de video de todas las cámaras instaladas dentro de la finca. 
-	\item Se cuenta con una computadora con capacidad computacional suficiente, o un servicio tercerizado similar, para el entrenamiento de los modelos de IA.
-	\item Se tendrá disponibilidad limitada para ingresar a la finca y realizar trabajos dentro de la misma, dependiendo de la ocupación de la misma y la naturaleza de los trabajos a realizar.
-	\item Se acepta una precisión dentro de un margen razonable de $\pm$10\% para la predicción de pesos de las aves. 
+	\item Se dispone de 10 horas semanales para el desarrollo del mismo.
+	\item Se tendrá acceso a un stream continuo de video de todas las cámaras instaladas dentro de la línea de producción. 
+	\item Se cuenta con una computadora con capacidad computacional suficiente, o un servicio tercerizado similar, para el entrenamiento del modelo de IA.
+	\item Se tendrá disponibilidad limitada para ingresar a la planta y realizar trabajos dentro de la misma, dependiendo de la naturaleza de los trabajos a realizar.
+	\item Se acepta un porcentaje de detección de 90\% para la identificación de nuggets en la línea de producción.
+	\item Se acepta un porcentaje de precisión en la clasificación de 10\% por clase.
 \end{itemize}
 
 \section{6. Requerimientos}
@@ -249,41 +256,39 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{enumerate}
 	\item Requerimientos de entrenamiento
 		\begin{enumerate}
-		\item Se debe instalar cámaras de video dentro de la finca.
-		\item Se debe recabar la información de entrenamiento de los modelos desde cero y etiquetarla.
+		\item Se debe instalar cámaras de video dentro de la planta, en la línea de producción.
+		\item Se debe recabar la información de entrenamiento del modelo desde cero y etiquetarla.
 		\end{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-		\item El sistema debe ser capaz de identificar a un 80\% de pollos que aparecen en cada cámara de video.
-		\item El sistema debe ser capaz de segmentar cada una de las aves por medio de coordenadas.
-		\item El sistema debe ser capaz de detectar características visuales de cada pollo.
-		\item El sistema debe ser capaz de predecir un peso a cada imagen de ave que identifique.
+		\item El sistema debe ser capaz de identificar a un 90\% de los nuggets que aparecen en cada cámara de video.
+		\item El sistema debe ser capaz de clasificar cada clase de nugget con un error menor de 10\% por clase.
+		\item El sistema debe ser capaz de darle seguimiento a cada nugget.
+		\item El sistema debe ser capaz de contar únicamente los nuggets que pasen por un umbral predefinido.
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
 		\item Se debe elaborar un informe de avance del proyecto.
 		\item Se debe elaborar una memoria técnica del proyecto.
 		\item Se debe documentar todo el procesamiento de imágenes que se realice.
-		\item El proyecto debe tener un control de versiones por medio de un repositorio de GitHub o alguna herramienta similar.
+		\item El proyecto debe tener un control de versiones por medio de un repositorio de GitHub.
 		\end{enumerate}
 	\item Requerimiento de desempeño
 		\begin{enumerate}
 		\item El procesamiento de video y las detecciones deben ser en tiempo real.
-		\item El sistema debe ser capaz de predecir con un margen de $\pm$10\% el peso de cada pollo.
 		\end{enumerate}
 	\item Requerimientos de la interfaz
 		\begin{enumerate}
-		\item La interfaz debe mostrar la distribución de pesos de los pollos.
-		\item La interfaz debe mostrar el peso promedio estimado de la parvada.
-		\item La interfaz debe mostrar el peso promedio de la parvada a lo largo del tiempo.
-		\item Se debe poder interactuar con la interfaz para dar inicio a un nuevo lote de pollos.
+		\item La interfaz debe mostrar la distribución de clases de nugget.
+		\item El usuario debe poder visualizar o descargar las distribuciones de lotes anteriores.
+		\item Se debe poder interactuar con la interfaz para dar inicio a un nuevo lote de nuggets.
 		\end{enumerate}
 \end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-Para el desarrollo del sistema de detección de peso de pollos en fincas broiler, se presentan las siguientes historias de usuario. Cada historia se describe desde la perspectiva del usuario o cliente, indicando claramente el objetivo y la razón detrás de la solicitud.
+Para el desarrollo del sistema de detección de errores en la línea de producción de nuggets, se presentan las siguientes historias de usuario. Cada historia se describe desde la perspectiva del usuario o cliente, indicando claramente el objetivo y la razón detrás de la solicitud.
 
 Además, se ponderan utilizando la escala basada en complejidad, dificultad e incertidumbre, sumando los valores para aproximarlos al siguiente número de la serie de Fibonacci. Por ejemplo, si la complejidad del trabajo es media (5), la dificultad es alta (5) y la incertidumbre es baja (2), los \textit{story points} serían 13 (5 + 5 + 2 = 12, que se aproxima al siguiente número de Fibonacci, que es 13). Los criterios para calcular los \textit{story points} son los siguientes:
 
@@ -311,19 +316,19 @@ Además, se ponderan utilizando la escala basada en complejidad, dificultad e in
 \textbf{Historias de usuario:}
 
 \begin{enumerate}
-\item Como gerente de producción, quiero ver la evolución del peso promedio de la parvada a lo largo del tiempo en la interfaz, para detectar tendencias y hacer ajustes en la crianza.
+\item Como gerente de producción, quiero ver los porcentajes de nuggets correctos e incorrectos, para saber la eficiencia de la línea de producción.
 
 \textit{Story points}: 8 (complejidad: 2, dificultad: 2, incertidumbre: 2)
 
-\item Como supervisor de la finca, quiero interactuar con la interfaz del sistema para iniciar un nuevo lote de pollos, para asegurar un manejo ordenado y documentado de cada ciclo de producción.
+\item Como supervisor de la línea de producción, quiero interactuar con la interfaz del sistema para iniciar un nuevo lote de nuggets, para asegurar un manejo ordenado y documentado de cada ciclo de producción.
 
 \textit{Story points}: 8 (complejidad: 2, dificultad: 2, incertidumbre: 3)
 
-\item Como trabajador de la finca, quiero que el sistema prediga el peso de cada pollo basado en las imágenes, para tomar decisiones informadas sobre el momento adecuado para llevar las aves a la planta de sacrificio.
+\item Como supervisor de mantenimiento, quiero que el sistema detecte los errores en los nuggets basado en las imágenes, para tomar decisiones informadas sobre el mejor lugar para invertir en mejorar la línea de producción.
 
 \textit{Story points}: 21 (complejidad: 8, dificultad: 5, incertidumbre: 3)
 
-\item Como gerente de operaciones, quiero que se guarde la información al iniciar un lote nuevo, para llevar un histórico de parvadas anteriores.
+\item Como jefe de mantenimiento, quiero que se guarde la información al iniciar un lote nuevo, para llevar un histórico de producciones anteriores.
 
 \textit{Story points}: 21 (complejidad: 5, dificultad: 3, incertidumbre: 8)
 
@@ -338,7 +343,7 @@ Los entregables del proyecto son (ejemplo):
 	\item Informe de avance del proyecto.
 	\item Manual de usuario.
 	\item Código fuente del firmware.
-	\item Interfaz web para ver el peso promedio, cambio en el tiempo de la misma y distribución de pesos actual.
+	\item Interfaz web para ver los porcentajes de cada clase y porcentajes de nuggets correctamente producidos.
 	\item Memoria del trabajo final.
 \end{itemize}
 
@@ -346,44 +351,36 @@ Los entregables del proyecto son (ejemplo):
 \label{sec:wbs}
 
 \begin{enumerate}
-\item Compra de equipos (35 horas)
+\item Compra de equipos (40 horas)
 	\begin{enumerate}
-	\item Comprar las cámaras de video a utilizar e instalarlas dentro de la finca. (32 horas)
+	\item Comprar las cámaras de video a utilizar e instalarlas dentro de la planta. (37 horas)
 	\item Comprar un ordenador o contratar un servicio en la nube para el entrenamiento de los modelos de IA. (asíncrono, 3 horas)
 	\end{enumerate}
-\item Toma de datos (170 horas)
+\item Toma de datos (100 horas)
 	\begin{enumerate}
-	\item Capturar imágenes de pollos en diferentes condiciones de iluminación y ángulos. (70 horas)
-	\item Capturar imágenes de pollos junto con mediciones precisas de su peso. (70 horas)
-	\item Control de calidad de imágenes capturadas: clasificación, ordenamiento, asegurar cantidades suficientes y variadas de imágenes para un entrenamiento correcto de los modelos de IA. (30 horas)
+	\item Capturar imágenes de nuggets en los distintos puntos de la línea de producción. (70 horas)
+	\item Control de calidad de imágenes capturadas: clasificación, ordenamiento, asegurar cantidades suficientes y variadas de imágenes para un entrenamiento correcto del modelo de IA. (30 horas)
 	\end{enumerate}
 \item Etiquetado de datos (30 horas)
 	\begin{enumerate}
-	\item Utilizar software de etiquetado para marcar y clasificar cada pollo en las imágenes. (15 horas)
-	\item Asociar cada imagen con el peso real del pollo. (15 horas)
+	\item Utilizar software de etiquetado para marcar y clasificar cada nugget en las imágenes. (30 horas)
 	\end{enumerate}
 \item Desarrollo del pipeline de preprocesamiento (30 horas)
 	\begin{enumerate}
 	\item Escribir códigos para limpiar y preparar las imágenes. (20 horas)
 	\item Aplicar técnicas de aumento de datos para mejorar la robustez del modelo. (10 horas)
 	\end{enumerate}
-\item Entrenamiento del modelo de segmentación y clasificación (120 horas)
+\item Entrenamiento del modelo de detección y clasificación (120 horas)
 	\begin{enumerate}
 	\item Seleccionar y configurar el modelo de IA apropiado. (20 horas)
 	\item Entrenar el modelo utilizando las imágenes etiquetadas. (100 horas)
 	\end{enumerate}
-\item Entrenamiento del modelo de predicción de peso (75 horas)
-	\begin{enumerate}
-	\item Seleccionar y configurar el modelo de IA apropiado. (15 horas)
-	\item Entrenar el modelo utilizando las imágenes etiquetadas con peso. (60 horas)
-	\end{enumerate}
 \item Desarrollo de la interfaz web (75 horas)
 	\begin{enumerate}
 	\item Desarrollar la interfaz utilizando tecnologías web. (15 horas)
-	\item Integrar el backend para mostrar datos en tiempo real. (25 horas)
-	\item Implementar gráficos para mostrar el peso promedio. (5 horas)
-	\item Implementar gráficos históricos para mostrar la evolución del peso. (5 horas)
-	\item Desarrollar funcionalidad para iniciar y gestionar nuevos lotes de pollos. (5 horas)
+	\item Integrar el backend para mostrar datos en tiempo real. (30 horas)
+	\item Implementar gráficos para mostrar la distribución de clases. (5 horas)
+	\item Desarrollar funcionalidad para iniciar y gestionar nuevos lotes de producción. (5 horas)
 	\item Realizar pruebas de usabilidad con los usuarios finales. (20 horas)
 	\end{enumerate}
 \item Documentación (65 horas)
@@ -391,12 +388,12 @@ Los entregables del proyecto son (ejemplo):
 	\item Documentar el informe de avance del proyecto. (20 horas)
 	\item Documentar la memoria técnica del proyecto. (20 horas)
 	\item Documentar el etiquetado y preprocesamiento de imágenes. (15 horas)
-	\item Documentar el entrenamiento y evaluación de los modelos de IA. (35 horas)
+	\item Documentar el entrenamiento y evaluación del modelo de IA. (35 horas)
 	\item Documentar el desarrollo e implementación de la interfaz web. (15 horas)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 640 horas.
+Cantidad total de horas: 460 horas.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
