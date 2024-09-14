@@ -88,7 +88,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 460 horas y un costo estimado de \$4,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$4,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -134,7 +134,7 @@ Actualmente, el porcentaje de producto que no se procesa adecuadamente es aproxi
 	\item Venta a menor costo: Resulta en una ganancia menor por unidad de energía y materia prima utilizada.
 \end{itemize}
 
-Como esta es una línea de producción activa, de operación continua y de gran relevancia, hacer ajustes y cambios en la misma no es sencillo ni económico, y requiere coordinación. Para saber dónde enfocar los esfuerzos, se propone la instalación de cámaras especializadas en \textit{computer vision} (CV) en varios puntos de la línea de producción. Estas cámaras capturan imágenes de los nuggets y mediante un modelo de inteligencia artificial (IA) se clasifica los nuggets en distintas categorias:
+Como esta es una línea de producción activa, de operación continua y de gran relevancia, hacer ajustes y cambios no es sencillo, económico, y requiere coordinación. Para saber dónde enfocar los esfuerzos, se propone la instalación de cámaras especializadas en \textit{computer vision} (CV) en varios puntos de la línea de producción. Estas cámaras capturan imágenes de los nuggets y mediante un modelo de inteligencia artificial (IA) se clasifica los nuggets en distintas categorias:
 
 \begin{itemize}
 	\item Inconsistencia en la fritura.
@@ -221,7 +221,7 @@ El propósito de este proyecto es desarrollar un sistema de clasificación media
 El proyecto contempla la parte de hardware y software a desarrollar para el diagrama en bloques especificado en la figura \ref{fig:diagBloques}. A desarrollar por el estudiante están las siguientes tareas:
 
 \begin{itemize}
-\item Recibir las imágenes de las cámaras de video para iniciar el pipeline de preprocesamiento de las mismas.
+\item Recibir las imágenes de las cámaras de video para iniciar el pipeline de preprocesamiento.
 \item Implementación de un modelo que, por medio de técnicas de IA y CV, pueda clasificar por lo menos un 90\% de los nuggets que se encuentren presentes en una foto.
 	\begin{itemize}
 	\item Obtención de imágenes para el entrenamiento del modelo seleccionado.
@@ -231,7 +231,7 @@ El proyecto contempla la parte de hardware y software a desarrollar para el diag
 \item Desarrollo de un reporte que indique, por zona (y por ende por cámara), la cantidad de cada categoría de nugget.
 \item Creación de una interfaz que muestre a los usuarios finales la distribución de clases en vivo de la línea de producción.
 	\begin{itemize}
-		\item Al mostrar la distribución de clases, se mostrará qué porcentaje corresponde a nuggets correctamente producidos vs nugget con algun tipo de error, asi como un desglose de los errores por su tipo.
+		\item Al mostrar la distribución de clases, se mostrará qué porcentaje corresponde a nuggets correctamente producidos vs nugget con algún tipo de error, así como un desglose de los errores por su tipo.
 	\end{itemize}	
 \end{itemize}
 
@@ -242,12 +242,12 @@ A pesar de que está incluido en el alcance del proyecto, no será desarrollado 
 Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Se dispone de 10 horas semanales para el desarrollo del mismo.
+	\item Se dispone de 10 horas semanales para el desarrollo del proyecto.
 	\item Se tendrá acceso a un stream continuo de video de todas las cámaras instaladas dentro de la línea de producción. 
 	\item Se cuenta con una computadora con capacidad computacional suficiente, o un servicio tercerizado similar, para el entrenamiento del modelo de IA.
-	\item Se tendrá disponibilidad limitada para ingresar a la planta y realizar trabajos dentro de la misma, dependiendo de la naturaleza de los trabajos a realizar.
+	\item Se tendrá disponibilidad limitada para ingresar a la planta y realizar trabajos dentro, dependiendo de la naturaleza de los trabajos a realizar.
 	\item Se acepta un porcentaje de detección de 90\% para la identificación de nuggets en la línea de producción.
-	\item Se acepta un porcentaje de precisión en la clasificación de 10\% por clase.
+	\item Se acepta un porcentaje de error en la clasificación de 10\% por clase.
 \end{itemize}
 
 \section{6. Requerimientos}
@@ -361,19 +361,23 @@ Los entregables del proyecto son (ejemplo):
 	\item Capturar imágenes de nuggets en los distintos puntos de la línea de producción. (70 horas)
 	\item Control de calidad de imágenes capturadas: clasificación, ordenamiento, asegurar cantidades suficientes y variadas de imágenes para un entrenamiento correcto del modelo de IA. (30 horas)
 	\end{enumerate}
-\item Etiquetado de datos (30 horas)
+\item Etiquetado de datos (80 horas)
 	\begin{enumerate}
-	\item Utilizar software de etiquetado para marcar y clasificar cada nugget en las imágenes. (30 horas)
+	\item Hacer reuniones con los colaboradores para entender los distintos errores que se producen en la línea e identificarlos correctamente en las imágenes. (20 horas)
+	\item Marcar en las imagenes los cuadros delimitadores de cada nugget. (30 horas)
+	\item Asignar a cada cuadro delimitador una categoría de nugget. (30 horas)
 	\end{enumerate}
-\item Desarrollo del pipeline de preprocesamiento (30 horas)
+\item Desarrollo del pipeline de preprocesamiento (40 horas)
 	\begin{enumerate}
-	\item Escribir códigos para limpiar y preparar las imágenes. (20 horas)
-	\item Aplicar técnicas de aumento de datos para mejorar la robustez del modelo. (10 horas)
+	\item Escribir códigos para limpiar y preparar las imágenes. (25 horas)
+	\item Aplicar técnicas de aumento de datos para mejorar la robustez del modelo. (15 horas)
 	\end{enumerate}
-\item Entrenamiento del modelo de detección y clasificación (120 horas)
+\item Entrenamiento del modelo de detección y clasificación (160 horas)
 	\begin{enumerate}
 	\item Seleccionar y configurar el modelo de IA apropiado. (20 horas)
-	\item Entrenar el modelo utilizando las imágenes etiquetadas. (100 horas)
+	\item Entrenar el modelo utilizando las imágenes etiquetadas. (90 horas)
+	\item Realizar pruebas de las distintas versiones del modelo con los colaboradores. (20 horas)
+	\item Implementar en cada cámara el umbral a partir del cual se contabilizan los nuggets. (30 horas)
 	\end{enumerate}
 \item Desarrollo de la interfaz web (75 horas)
 	\begin{enumerate}
@@ -383,17 +387,17 @@ Los entregables del proyecto son (ejemplo):
 	\item Desarrollar funcionalidad para iniciar y gestionar nuevos lotes de producción. (5 horas)
 	\item Realizar pruebas de usabilidad con los usuarios finales. (20 horas)
 	\end{enumerate}
-\item Documentación (65 horas)
+\item Documentación (105 horas)
 	\begin{enumerate}
 	\item Documentar el informe de avance del proyecto. (20 horas)
-	\item Documentar la memoria técnica del proyecto. (20 horas)
-	\item Documentar el etiquetado y preprocesamiento de imágenes. (15 horas)
-	\item Documentar el entrenamiento y evaluación del modelo de IA. (35 horas)
-	\item Documentar el desarrollo e implementación de la interfaz web. (15 horas)
+	\item Documentar la memoria técnica del proyecto. (40 horas)
+	\item Documentar el etiquetado y preprocesamiento de imágenes. (10 horas)
+	\item Documentar el entrenamiento y evaluación del modelo de IA. (25 horas)
+	\item Documentar el desarrollo e implementación de la interfaz web. (10 horas)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 460 horas.
+Cantidad total de horas: 600 horas.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
