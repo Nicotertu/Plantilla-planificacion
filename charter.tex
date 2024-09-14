@@ -32,7 +32,7 @@
  
 \fechaINICIO{27 de agosto de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{15 de octubre de 2024} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{1 de marzo de 2025}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{1 de abril de 2025}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -62,7 +62,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                 & {9} de {septiembre} de 2024 \\ \hline
 2      & Se completa hasta el punto 9 inclusive                 & {9} de {septiembre} de 2024 \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                 & {14} de {julio} de 2024 \\ \hline
+3      & Se completa hasta el punto 12 inclusive                 & {14} de {septiembre} de 2024 \\ \hline
 %4      & Se completa hasta el punto 15 inclusive                 & {23} de {julio} de 2024 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -88,7 +88,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$4,000.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$16,900.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -406,14 +406,14 @@ En la figura \ref{fig:AoN} se muestra el diagrama \textit{Activity on Node} con 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/Legend Activity on Node.png}
+\includegraphics[width=.8\textwidth]{./Figuras/Legend Activity on Node 2.png}
 \caption{Cuadro indicativo del diagrama de \textit{Activity on Node}.}
 \label{fig:LegendAoN}
 \end{figure}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/Activity on Node.png}
+\includegraphics[width=.8\textwidth]{./Figuras/Activity on Node 2.png}
 \caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
@@ -434,7 +434,7 @@ En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto.
 \begin{ganttchart}[
     vgrid,
     hgrid,
-    x unit=0.125cm,
+    x unit=0.115cm,
     y unit title=0.6cm,
     y unit chart=0.45cm,
     milestone/.append style={xscale=4},
@@ -448,54 +448,53 @@ En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto.
     bar incomplete/.append style={fill=red!30},
     bar label font=\color{black},
     group/.append style={fill=black!70, draw=black},
-]{2024-08-15}{2025-01-31}
+]{2024-10-01}{2025-04-06}
     \gantttitlecalendar{year, month, week=1} \\
 
     
     % Compra de equipos
-    \ganttgroup{Equipos}{2024-08-15}{2024-08-25} \\
-    \ganttbar{Tarea 1.1}{2024-08-15}{2024-08-25} \\
-    \ganttbar{Tarea 1.2}{2024-08-15}{2024-08-25} \\
+    \ganttgroup{Equipos}{2024-10-01}{2024-10-21} \\
+    \ganttbar{Tarea 1.1}{2024-10-01}{2024-10-21} \\
+    \ganttbar{Tarea 1.2}{2024-10-18}{2024-10-21} \\
 
     % Toma de datos
-    \ganttgroup{Toma de datos}{2024-08-26}{2024-10-14} \\
-    \ganttbar{Tarea 2.1}{2024-08-26}{2024-10-07} \\
-    \ganttbar{Tarea 2.2}{2024-08-26}{2024-10-07} \\
-    \ganttbar{Tarea 2.3}{2024-09-01}{2024-10-14} \\
+    \ganttgroup{Toma de datos}{2024-10-22}{2024-11-12} \\
+    \ganttbar{Tarea 2.1}{2024-10-22}{2024-11-07} \\
+    \ganttbar{Tarea 2.2}{2024-11-06}{2024-11-12} \\
 
     % Etiquetado de datos
-    \ganttgroup{Etiquetado}{2024-10-14}{2024-10-31} \\
-    \ganttbar{Tarea 3.1}{2024-10-14}{2024-10-31} \\
-    \ganttbar{Tarea 3.2}{2024-10-17}{2024-10-31} \\
+    \ganttgroup{Etiquetado}{2024-11-13}{2024-12-15} \\
+    \ganttbar{Tarea 3.1}{2024-11-13}{2024-12-01} \\
+    \ganttbar{Tarea 3.2}{2024-11-14}{2024-12-15} \\
+    \ganttbar{Tarea 3.2}{2024-11-14}{2024-12-15} \\
 
     % Desarrollo del pipeline de preprocesamiento
-    \ganttgroup{Procesamiento}{2024-10-14}{2024-11-03} \\
-    \ganttbar{Tarea 4.1}{2024-10-14}{2024-11-03} \\
-    \ganttbar{Tarea 4.2}{2024-10-14}{2024-11-03} \\
+    \ganttgroup{Procesamiento}{2024-11-13}{2024-12-15} \\
+    \ganttbar{Tarea 4.1}{2024-11-20}{2024-12-05} \\
+    \ganttbar{Tarea 4.2}{2024-11-25}{2024-12-15} \\
 
     % Entrenamiento del modelo de segmentación y clasificación
-    \ganttgroup{Entrenamiento}{2024-11-04}{2024-11-30} \\
-    \ganttbar{Tarea 5.1}{2024-11-04}{2024-11-25} \\
-    \ganttbar{Tarea 5.2}{2024-11-11}{2024-11-30} \\
-    \ganttbar{Tarea 6.1}{2024-11-10}{2024-11-25} \\
-    \ganttbar{Tarea 6.2}{2024-11-15}{2024-11-30} \\
+    \ganttgroup{Entrenamiento}{2024-12-15}{2025-02-05} \\
+    \ganttbar{Tarea 5.1}{2024-12-15}{2024-12-25} \\
+    \ganttbar{Tarea 5.2}{2024-12-20}{2025-01-31} \\
+    \ganttbar{Tarea 5.3}{2024-12-20}{2025-01-31} \\
+    \ganttbar{Tarea 5.4}{2025-01-20}{2025-02-05} \\
 
     % Desarrollo de la interfaz web
-    \ganttgroup{Interfaz web}{2024-12-01}{2024-12-15} \\
-    \ganttbar{Tarea 7.1}{2024-12-01}{2024-12-05} \\
-    \ganttbar{Tarea 7.2}{2024-12-01}{2024-12-15} \\
-    \ganttbar{Tarea 7.3}{2024-12-01}{2024-12-08} \\
-    \ganttbar{Tarea 7.4}{2024-12-01}{2024-12-10} \\
-    \ganttbar{Tarea 7.5}{2024-12-01}{2024-12-12} \\
-    \ganttbar{Tarea 7.6}{2024-12-01}{2024-12-15} \\
+    \ganttgroup{Interfaz web}{2025-02-06}{2025-03-01} \\
+    \ganttbar{Tarea 6.1}{2025-02-06}{2025-02-13} \\
+    \ganttbar{Tarea 6.2}{2025-02-14}{2025-03-01} \\
+    \ganttbar{Tarea 6.3}{2025-02-26}{2025-03-01} \\
+    \ganttbar{Tarea 6.4}{2025-02-26}{2025-03-01} \\
+    \ganttbar{Tarea 6.5}{2025-02-14}{2025-03-01} \\
 
     % Documentación
-    \ganttgroup{Documentos}{2024-12-15}{2025-01-31} \\
-    \ganttbar{Tarea 8.1}{2024-12-15}{2025-01-31} \\
-    \ganttbar{Tarea 8.2}{2024-12-15}{2025-01-31} \\
-    \ganttbar{Tarea 8.3}{2024-12-15}{2025-01-31} \\
-    \ganttbar{Tarea 8.4}{2024-12-15}{2025-01-31} \\
-    \ganttbar{Tarea 8.5}{2024-12-15}{2025-01-31} \\
+    \ganttgroup{Documentos}{2025-03-02}{2025-04-01} \\
+    \ganttbar{Tarea 7.1}{2025-03-02}{2025-04-01} \\
+    \ganttbar{Tarea 7.2}{2025-03-02}{2025-04-01} \\
+    \ganttbar{Tarea 7.3}{2025-03-02}{2025-04-01} \\
+    \ganttbar{Tarea 7.4}{2025-03-02}{2025-04-01} \\
+    \ganttbar{Tarea 7.5}{2025-03-02}{2025-04-01} \\
 
 \end{ganttchart}
 \end{center}
@@ -508,7 +507,7 @@ En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto.
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-A continuación, se presenta el análisis de costos del proyecto expresado en dólares estadounidenses (USD). La tasa de conversión al día 15 de julio de 2024 establece que \$922.24 ARS equivale a \$1.00 USD.
+A continuación, se presenta el análisis de costos del proyecto expresado en dólares estadounidenses (USD). La tasa de conversión al día 14 de septiembre de 2024 establece que \$960.26 ARS equivale a \$1.00 USD.
 
 \begin{table}[htpb]
 \centering
@@ -529,8 +528,8 @@ Descripción &
   
   \multicolumn{1}{|l|}{Instalación de cámaras y materiales} & 
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{\$4,000.00} &
-  \multicolumn{1}{c|}{\$4,000.00} \\ \hline
+  \multicolumn{1}{c|}{\$2,000.00} &
+  \multicolumn{1}{c|}{\$2,000.00} \\ \hline
   
   \multicolumn{1}{|l|}{Computadora para entrenamiento de modelos} & 
   \multicolumn{1}{c|}{1} &
@@ -538,7 +537,7 @@ Descripción &
   \multicolumn{1}{c|}{\$4,000.00} \\ \hline
   
   \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$9,500.00} \\ \hline
+  \multicolumn{1}{c|}{\$7,500.00} \\ \hline
   \rowcolor[HTML]{C0C0C0} 
   \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -553,15 +552,15 @@ Descripción &
   \multicolumn{1}{c|}{\$400.00} \\ \hline
   
   \multicolumn{1}{|l|}{Horas de trabajo} & 
-  \multicolumn{1}{c|}{640} &
+  \multicolumn{1}{c|}{600} &
   \multicolumn{1}{c|}{\$15.00} &
-  \multicolumn{1}{c|}{\$9,600.00} \\ \hline
+  \multicolumn{1}{c|}{\$9,000.00} \\ \hline
 
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$10,000.00} \\ \hline
+  \multicolumn{1}{c|}{\$9,400.00} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-\multicolumn{1}{c|}{\$19,500.00} \\ \hline
+\multicolumn{1}{c|}{\$16,900.00} \\ \hline
 \end{tabularx}%
 \end{table}
 
