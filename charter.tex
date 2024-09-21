@@ -570,7 +570,7 @@ Descripción &
 
 A continuación se listan los potenciales riesgos que se podrían presentar en el desarrollo del proyecto. Para la estimación de la severidad (S) y la probabilidad de ocurrencia (O) de los riesgos se utiliza una escala del 1 al 10, donde 1 es el valor mínimo y 10 es el valor máximo.
 
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos y estimación de sus consecuencias:
  
 Riesgo 1: poder computacional reducido para entrenamiento de modelos.
 \begin{itemize}
@@ -588,28 +588,28 @@ Riesgo 2: retrasos en la entrega e instalación de equipos.
 	Los proveedores pueden experimentar problemas logísticos, especialmente en contextos internacionales, por lo que se asigna una probabilidad alta.
 \end{itemize}
 
-Riesgo 3: Problemas de conectividad.
-\begin{itemize}
-	\item Severidad (S):  7.\\
-	La pérdida de conectividad puede interrumpir la transmisión de datos en tiempo real, lo que afecta la capacidad de respuesta del sistema.
-	\item Probabilidad de ocurrencia (O): 5.\\
-	Las fincas pueden tener problemas de conectividad debido a infraestructura limitada por su naturaleza rural.
-\end{itemize}
-
-Riesgo 4: deterioro de cámaras dentro de la finca.
+Riesgo 3: deterioro de cámaras dentro de la planta.
 \begin{itemize}
 	\item Severidad (S):  8.\\
-	Las cámaras son fundamentales para el desarrollo el proyecto ya que ellas son las que obtienen los datos de entrada de los modelos de IA.
-	\item Probabilidad de ocurrencia (O): 6.\\
-	El ambiente dentro de la finca es hostil para componentes electrónicos por la gran humedad en el aire y la orina de los pollos.
+	Las cámaras son fundamentales para el desarrollo el proyecto ya que ellas son las que obtienen los datos de entrada del modelo de IA.
+	\item Probabilidad de ocurrencia (O): 2.\\
+	El ambiente dentro de la planta es húmedo y refrigerado, pero ya existen cámaras instaladas. Si se siguen las mismas especificaciones técnicas que las cámaras existentes, no debe haber problemas de deterioro.
 \end{itemize}
 
-Riesgo 5: precisión baja del sistema para detectar peso de los pollos.
+Riesgo 4: precisión baja del sistema para contar nuggets.
 \begin{itemize}
-	\item Severidad (S):  8.\\
-	El objetivo principal del sistema es determinar el momento perfecto para llevar los pollos a la planta de sacrificio. Una baja precisión llevaría a perdidas o insatisfacción de los clientes.
-	\item Probabilidad de ocurrencia (O): 3.\\
-	La precisión de los modelos se compara con los métodos actuales de muestreo, los cuales no son representativos de la parvada. El estado del arte en cuanto a modelos de IA para segmentación de instancias y detección de features son prometedores.
+	\item Severidad (S):  9.\\
+	Un mal seguimiento del nugget a través de la cinta transportadora puede llevar a perderlo de vista y fallar a la hora de contar el momento en el que cruza el umbral. Un mal conteo de los nuggets puede concluir que los problemas de la línea de producción están en un punto que no es el correcto, y llevar a una mala decisión.
+	\item Probabilidad de ocurrencia (O): 2.\\
+	Las técnicas actuales de seguimiento por CV son avanzadas, incluso para seguimiento de múltiples objetos. Las mayores dificultades que tienen son para objetos de diferentes tamaños que se mueven en distintas direcciones. Como este no es el caso de este proyecto, ya que los nuggets son del mismo tamaño y se mueven en la misma dirección, la probabilidad de riesgo es baja.
+\end{itemize}
+
+Riesgo 5: precisión baja para detectar las distintas clases de nugget.
+\begin{itemize}
+	\item Severidad (S):  9.\\
+	El objetivo principal del sistema es determinar el lugar con más fallos en la línea de producción para invertir en mejoras. Una baja precisión puede llevar a tomar una decisión mal informada y una subsecuente mala inversión.
+	\item Probabilidad de ocurrencia (O): 4.\\
+	Las distintas clases de nuggets son, visualmente, considerablemente diferentes. Se espera que la matriz de confusión pueda tener algunos fallos entre nuggets correctos y nuggets con algún problema, mas no muchos fallos confundiendo un nugget con un determinado problema con otro nugget con un problema diferente.
 \end{itemize}
 
 
@@ -623,34 +623,26 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Poder computacional reducido para entrenamiento de modelos.       & 5  &  2 & 10    & -   &  -  & -     \\ \hline
 Retrasos en la entrega e instalación de equipos.       & 3  & 7  & 21    & -   & -   & -     \\ \hline
-Problemas de conectividad.       & 7  & 5  &  35   & 3   & 5   &  15    \\ \hline
-Deterioro de cámaras dentro de la finca.       & 8  & 6  &  48   & 8   & 1   & 8     \\ \hline
-Precisión baja del sistema para detectar peso de los pollos.       & 8  & 3  &   24  & -   &  -  &   -   \\ \hline
+Deterioro de cámaras dentro de la planta.       & 8  & 2  &  16   & -   & -   & -     \\ \hline
+Precisión baja del sistema para contar nuggets.       & 9  & 2  &  18   & -   & -   &  -    \\ \hline
+Precisión baja para detectar las distintas clases de nugget.       & 9  & 4  &   36  & 9   &  2  &  18   \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25.
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 3: desarrollar la interfaz del sistema de modo que se pueda acceder a ella tanto remota como localmente.
+Riesgo 5: precisión baja para detectar las distintas clases de nugget.
   \begin{itemize}
-	\item Severidad (S*): 3.
-          El personal de la finca utiliza medios que no requieren Internet para comunicarse entre ellos, por lo que se puede revisar el sistema localmente en la finca en caso de perdidas de conexión.
-	\item Probabilidad de ocurrencia (O*): 5.
-          La ocurrencia de los problemas de conexión se debe a la naturaleza rural de las fincas y disminuirlo implicaría hablar con los proveedores del servicio, lo cual escapa del alcance del proyecto.
-	\end{itemize}
-
-Riesgo 4: comprar cámaras diseñadas para entornos hostiles.
-  \begin{itemize}
-	\item Severidad (S*): 8.
-          Daños en las cámaras sigue siendo devastador para el sistema.
-	\item Probabilidad de ocurrencia (O*): 1.
-          Cámaras con protección adecuada, por ejemplo IP67, reducen significativamente la posibilidad de daños en las mismas.
+	\item Severidad (S*): 9.
+          Errores en la clasificación de los nuggets sigue siendo el punto clave de este proyecto, por lo que la severidad no cambia.
+	\item Probabilidad de ocurrencia (O*): 2.
+          En caso de que la matriz de confusión muestre valores de precisión y exhaustividad bajos, aumentar el tamaño del dataset y asegurando que haya un buen balance de clases debe mejorar el rendimiento del sistema.
 	\end{itemize}
 
 
