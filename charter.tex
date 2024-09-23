@@ -63,7 +63,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1      & Se completa hasta el punto 5 inclusive                 & {9} de {septiembre} de 2024 \\ \hline
 2      & Se completa hasta el punto 9 inclusive                 & {9} de {septiembre} de 2024 \\ \hline
 3      & Se completa hasta el punto 12 inclusive                 & {14} de {septiembre} de 2024 \\ \hline
-%4      & Se completa hasta el punto 15 inclusive                 & {23} de {julio} de 2024 \\ \hline
+4      & Se completa hasta el punto 15 inclusive                 & {23} de {septiembre} de 2024 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
@@ -651,31 +651,39 @@ Riesgo 5: precisión baja para detectar las distintas clases de nugget.
 \label{sec:calidad}
 
 \begin{itemize} 
-\item Req \#1: precisión del sistema de detección de peso.
+\item Req \#1: precisión del sistema de clasificación.
 	\begin{itemize}
-	\item Verificación: comprobar las predicciones de peso arrojadas por el sistema contra los datos estadísticos de antiguas parvadas que mantiene el personal de las fincas.
-	\item Validación: mostrarle al cliente pesando pollos manualmente y comparándolo contra las predicciones del sistema.
+	\item Verificación: verificar la matriz de confusión con los datos de validación.
+	\item Validación: demostrar al cliente la capacidad de clasificación del sistema con la línea de producción activa.
 	\end{itemize}
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#2: efectividad en detección de instancias de pollos.
+\item Req \#2: precisión del sistema de conteo.
 	\begin{itemize}
-	\item Verificación: verificar manual y visualmente que se identifique el porcentaje de pollos acordado en las imágenes capturadas por las cámaras.
-	\item Validación: mostrarle al cliente los resultados del sistema y asegurar su satisfacción.
+	\item Verificación: verificar con videos de la línea de producción que el conteo se esta realizado correctamente.
+	\item Validación: demostrar al cliente el funcionamiento del sistema de conteo con la línea de producción activa.
 	\end{itemize}
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#3: durabilidad de las cámaras.
+\item Req \#3: especificaciones de las cámaras.
 	\begin{itemize}
-	\item Verificación: inspecciones visuales de las cámaras durante el desarrollo del proyecto.
-	\item Validación: confirmar con el cliente que las cámaras funcionan correctamente después de un periodo de prueba en la finca.
+	\item Verificación: comprobar que las cámaras tienen suficiente resolución para mostrar los detalles de los nuggets, brindar suficiente información para su correcta clasificación, y que no se vean borrosos con el movimiento de la cinta transportadora.
+	\item Validación: demostrar al cliente la capacidad del sistema para detectar los nuggets, que no se vean borrosos y que se clasifiquen correctamente.
 	\end{itemize}
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#4: facilidad de uso de la interfaz.
+\item Req \#4: durabilidad de las cámaras.
+	\begin{itemize}
+	\item Verificación: inspeccionar visualmente las cámaras durante el desarrollo del proyecto.
+	\item Validación: confirmar con el cliente que las cámaras funcionan correctamente después de un periodo de prueba en la planta.
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize} 
+\item Req \#5: facilidad de uso de la interfaz.
 	\begin{itemize}
 	\item Verificación: realizar pruebas de usabilidad con usuarios representativos y recopilar feedback.
 	\item Validación: obtener aprobación del cliente mediante sesiones de capacitación y uso de la interfaz.
@@ -683,42 +691,34 @@ Riesgo 5: precisión baja para detectar las distintas clases de nugget.
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#5: resiliencia a fallos de conectividad.
+\item Req \#6: comunicación de resultados.
 	\begin{itemize}
-	\item Verificación: simular fallos de conectividad y evaluar cómo responde el sistema.
-	\item Validación: asegurarse de que el cliente está satisfecho con el desempeño del sistema durante periodos de conectividad intermitente en la finca.
+	\item Verificación: mostrar en la interfaz los resultados globales del sistema y particulares por zona de la línea de producción.
+	\item Validación: obtener aprobación del cliente.
 	\end{itemize}
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#6: mantenimiento y soporte técnico.
+\item Req \#7: mantenimiento y soporte técnico.
 	\begin{itemize}
-	\item Verificación: revisar los planes de mantenimiento y las capacidades de soporte técnico
+	\item Verificación: revisar los planes de mantenimiento y las capacidades de soporte técnico.
 	\item Validación: elaborar un check list del mantenimiento a realizar y obtener la aprobación del cliente.
 	\end{itemize}
 \end{itemize}
 
 \begin{itemize} 
-\item Req \#7: escalabilidad del sistema.
+\item Req \#8: rendimiento del sistema.
 	\begin{itemize}
-	\item Verificación: realizar pruebas que demuestren que el sistema puede manejar un aumento en la carga sin degradar el desempeño.
-	\item Validación: confirmar con el cliente que el sistema puede expandirse, ya sea a otras fincas o colocando más cámaras, conforme a sus necesidades futuras.
-	\end{itemize}
-\end{itemize}
-
-\begin{itemize} 
-\item Req \#8: tiempo de respuesta del sistema.
-	\begin{itemize}
-	\item Verificación: medir el tiempo de procesamiento de las imágenes y la generación de resultados. 
-	\item Validación: realizar pruebas en condiciones reales de uso y confirmar con el cliente que el sistema cumple con los tiempos de respuesta esperados.
+	\item Verificación: medir el tiempo de procesamiento de las imágenes y la generación de resultados en  computadoras diferentes a la utilizada para entrenar el modelo de IA. 
+	\item Validación: realizar pruebas en condiciones reales de uso y demostrarle al cliente que el sistema cumple con los tiempos de respuesta esperados.
 	\end{itemize}
 \end{itemize}
 
 \begin{itemize} 
 \item Req \#9: funcionamiento continuo del sistema.
 	\begin{itemize}
-	\item Verificación: simular fallos de fluido eléctrico y comprobar que el sistema no requiere manipulación para restablecerse.
-	\item Validación: asegurarse de que el cliente está satisfecho con el desempeño del sistema durante fallas en el fluido eléctrico  en la finca.
+	\item Verificación: simular fallos de la provisión de energía eléctrica y comprobar que el sistema no requiere manipulación para restablecerse.
+	\item Validación: asegurar que el cliente está satisfecho con el desempeño del sistema durante fallas en la provisión de energía eléctrica en la planta.
 	\end{itemize}
 \end{itemize}
 
