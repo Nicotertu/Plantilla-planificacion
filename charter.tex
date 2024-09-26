@@ -88,7 +88,7 @@ Panamá, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$16,900.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de detección y clasificación de nuggets que presentan errores en la línea de producción por medio de \textit{computer vision} (CV). El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$16 900.00, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -354,7 +354,7 @@ Los entregables del proyecto son (ejemplo):
 \item Compra de equipos (40 horas)
 	\begin{enumerate}
 	\item Comprar las cámaras de video a utilizar e instalarlas dentro de la planta. (37 horas)
-	\item Comprar un ordenador o contratar un servicio en la nube para el entrenamiento de los modelos de IA. (asíncrono, 3 horas)
+	\item Comprar un ordenador o contratar un servicio en la nube para el entrenamiento de los modelos de IA. (3 horas)
 	\end{enumerate}
 \item Toma de datos (100 horas)
 	\begin{enumerate}
@@ -454,47 +454,59 @@ En la figura \ref{fig:gantt} se muestra el diagrama de Gantt del proyecto.
     
     % Compra de equipos
     \ganttgroup{Equipos}{2024-10-01}{2024-10-21} \\
-    \ganttbar{Tarea 1.1}{2024-10-01}{2024-10-21} \\
-    \ganttbar{Tarea 1.2}{2024-10-18}{2024-10-21} \\
+    \ganttbar[name=task1]{Tarea 1.1}{2024-10-01}{2024-10-21} \\
+    \ganttbar[name=task2]{Tarea 1.2}{2024-10-18}{2024-10-21} \\
 
     % Toma de datos
     \ganttgroup{Toma de datos}{2024-10-22}{2024-11-12} \\
-    \ganttbar{Tarea 2.1}{2024-10-22}{2024-11-07} \\
-    \ganttbar{Tarea 2.2}{2024-11-06}{2024-11-12} \\
+    \ganttbar[name=task3]{Tarea 2.1}{2024-10-22}{2024-11-07} \\
+    \ganttbar[name=task4]{Tarea 2.2}{2024-11-06}{2024-11-12} \\
 
     % Etiquetado de datos
     \ganttgroup{Etiquetado}{2024-11-13}{2024-12-15} \\
-    \ganttbar{Tarea 3.1}{2024-11-13}{2024-12-01} \\
-    \ganttbar{Tarea 3.2}{2024-11-14}{2024-12-15} \\
-    \ganttbar{Tarea 3.2}{2024-11-14}{2024-12-15} \\
-
+    \ganttbar[name=task5]{Tarea 3.1}{2024-11-13}{2024-12-01} \\
+    \ganttbar[name=task6]{Tarea 3.2}{2024-11-14}{2024-12-15} \\
+    
     % Desarrollo del pipeline de preprocesamiento
     \ganttgroup{Procesamiento}{2024-11-13}{2024-12-15} \\
-    \ganttbar{Tarea 4.1}{2024-11-20}{2024-12-05} \\
-    \ganttbar{Tarea 4.2}{2024-11-25}{2024-12-15} \\
-
+    \ganttbar[name=task7]{Tarea 4.1}{2024-11-20}{2024-12-05} \\
+    \ganttbar[name=task8]{Tarea 4.2}{2024-11-25}{2024-12-15} \\
+    
     % Entrenamiento del modelo de segmentación y clasificación
     \ganttgroup{Entrenamiento}{2024-12-15}{2025-02-05} \\
-    \ganttbar{Tarea 5.1}{2024-12-15}{2024-12-25} \\
-    \ganttbar{Tarea 5.2}{2024-12-20}{2025-01-31} \\
-    \ganttbar{Tarea 5.3}{2024-12-20}{2025-01-31} \\
-    \ganttbar{Tarea 5.4}{2025-01-20}{2025-02-05} \\
-
+    \ganttbar[name=task9]{Tarea 5.1}{2024-12-15}{2024-12-25} \\
+    \ganttbar[name=task10]{Tarea 5.2}{2024-12-20}{2025-01-31} \\
+    \ganttbar[name=task11]{Tarea 5.3}{2024-12-20}{2025-01-31} \\
+    \ganttbar[name=task12]{Tarea 5.4}{2025-01-20}{2025-02-05} \\
+    
     % Desarrollo de la interfaz web
     \ganttgroup{Interfaz web}{2025-02-06}{2025-03-01} \\
-    \ganttbar{Tarea 6.1}{2025-02-06}{2025-02-13} \\
-    \ganttbar{Tarea 6.2}{2025-02-14}{2025-03-01} \\
-    \ganttbar{Tarea 6.3}{2025-02-26}{2025-03-01} \\
-    \ganttbar{Tarea 6.4}{2025-02-26}{2025-03-01} \\
-    \ganttbar{Tarea 6.5}{2025-02-14}{2025-03-01} \\
+    \ganttbar[name=task13]{Tarea 6.1}{2025-02-06}{2025-02-13} \\
+    \ganttbar[name=task14]{Tarea 6.2}{2025-02-14}{2025-03-01} \\
+    \ganttbar[name=task15]{Tarea 6.3}{2025-02-26}{2025-03-01} \\
+    \ganttbar[name=task16]{Tarea 6.4}{2025-02-26}{2025-03-01} \\
+    \ganttbar[name=task17]{Tarea 6.5}{2025-02-14}{2025-03-01} \\
 
     % Documentación
     \ganttgroup{Documentos}{2025-03-02}{2025-04-01} \\
-    \ganttbar{Tarea 7.1}{2025-03-02}{2025-04-01} \\
-    \ganttbar{Tarea 7.2}{2025-03-02}{2025-04-01} \\
-    \ganttbar{Tarea 7.3}{2025-03-02}{2025-04-01} \\
-    \ganttbar{Tarea 7.4}{2025-03-02}{2025-04-01} \\
-    \ganttbar{Tarea 7.5}{2025-03-02}{2025-04-01} \\
+    \ganttbar[name=task18]{Tarea 7.1}{2025-03-02}{2025-04-01} \\
+    \ganttbar[name=task19]{Tarea 7.2}{2025-03-02}{2025-04-01} \\
+    \ganttbar[name=task20]{Tarea 7.3}{2025-03-02}{2025-04-01} \\
+    \ganttbar[name=task21]{Tarea 7.4}{2025-03-02}{2025-04-01} \\
+    \ganttbar[name=task22]{Tarea 7.5}{2025-03-02}{2025-04-01} \\
+    
+    % Add task dependencies (arrows)
+    \ganttlink[link mid=0.5]{task1}{task3}
+    \ganttlink[link mid=0.3]{task4}{task5}
+    \ganttlink[link mid=0.3]{task8}{task9}
+    \ganttlink[link mid=0.3]{task12}{task13}
+    \ganttlink[link mid=0.3]{task13}{task14}
+    \ganttlink[link mid=0.1]{task13}{task17}
+    \ganttlink[link mid=0.25]{task17}{task18}
+    \ganttlink[link mid=0.20]{task17}{task19}
+    \ganttlink[link mid=0.17]{task17}{task20}
+    \ganttlink[link mid=0.15]{task17}{task21}
+    \ganttlink[link mid=0.12]{task17}{task22}
 
 \end{ganttchart}
 \end{center}
@@ -524,20 +536,20 @@ Descripción &
   \multicolumn{1}{|l|}{Cámaras para CV} & 
   \multicolumn{1}{c|}{5} &
   \multicolumn{1}{c|}{\$300.00} &
-  \multicolumn{1}{c|}{\$1,500.00} \\ \hline
+  \multicolumn{1}{c|}{\$1 500.00} \\ \hline
   
   \multicolumn{1}{|l|}{Instalación de cámaras y materiales} & 
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{\$2,000.00} &
-  \multicolumn{1}{c|}{\$2,000.00} \\ \hline
+  \multicolumn{1}{c|}{\$2 000.00} &
+  \multicolumn{1}{c|}{\$2 000.00} \\ \hline
   
   \multicolumn{1}{|l|}{Computadora para entrenamiento de modelos} & 
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{\$4,000.00} &
-  \multicolumn{1}{c|}{\$4,000.00} \\ \hline
+  \multicolumn{1}{c|}{\$4 000.00} &
+  \multicolumn{1}{c|}{\$4 000.00} \\ \hline
   
   \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$7,500.00} \\ \hline
+  \multicolumn{1}{c|}{\$7 500.00} \\ \hline
   \rowcolor[HTML]{C0C0C0} 
   \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -554,13 +566,13 @@ Descripción &
   \multicolumn{1}{|l|}{Horas de trabajo} & 
   \multicolumn{1}{c|}{600} &
   \multicolumn{1}{c|}{\$15.00} &
-  \multicolumn{1}{c|}{\$9,000.00} \\ \hline
+  \multicolumn{1}{c|}{\$9 000.00} \\ \hline
 
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$9,400.00} \\ \hline
+  \multicolumn{1}{c|}{\$9 400.00} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-\multicolumn{1}{c|}{\$16,900.00} \\ \hline
+\multicolumn{1}{c|}{\$16 900.00} \\ \hline
 \end{tabularx}%
 \end{table}
 
@@ -575,7 +587,7 @@ a) Identificación de los riesgos y estimación de sus consecuencias:
 Riesgo 1: poder computacional reducido para entrenamiento de modelos.
 \begin{itemize}
 	\item Severidad (S): 5. \\
-	Riesgo de severidad media. La repercusión de no contar con gran poder computacional afecta los tiempos de entrenamiento mas no el desempeño de los modelos.
+	Riesgo de severidad media. La repercusión de no contar con el poder computacional necesario afecta los tiempos de entrenamiento mas no el desempeño de los modelos.
 	\item Probabilidad de ocurrencia (O): 2. \\
 	Se hará una investigación previa sobre los requisitos computacionales y el equipo a comprar/servicio a contratar, por lo que la posibilidad de este riesgo es baja.
 \end{itemize}   
@@ -583,7 +595,7 @@ Riesgo 1: poder computacional reducido para entrenamiento de modelos.
 Riesgo 2: retrasos en la entrega e instalación de equipos.
 \begin{itemize}
 	\item Severidad (S): 3. \\
-	Riesgo de severidad baja. Se pueden ir adelantando otras tareas mientras los equipos se compran y son instalados.
+	Riesgo de severidad baja. Se pueden adelantar otras tareas mientras los equipos se compran y son instalados.
 	\item Probabilidad de ocurrencia (O): 7. \\
 	Los proveedores pueden experimentar problemas logísticos, especialmente en contextos internacionales, por lo que se asigna una probabilidad alta.
 \end{itemize}
@@ -637,12 +649,12 @@ Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplic
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 5: precisión baja para detectar las distintas clases de nugget.
+Riesgo 5: como plan de mitigación se propone aumentar el tamaño del dataset y asegurar un balance de clases que mejore el rendimiento del sistema.
   \begin{itemize}
 	\item Severidad (S*): 9.
           Errores en la clasificación de los nuggets sigue siendo el punto clave de este proyecto, por lo que la severidad no cambia.
 	\item Probabilidad de ocurrencia (O*): 2.
-          En caso de que la matriz de confusión muestre valores de precisión y exhaustividad bajos, aumentar el tamaño del dataset y asegurando que haya un buen balance de clases debe mejorar el rendimiento del sistema.
+          Contar con clases balanceadas y más imágenes para entrenamiento del modelo de IA debe mejorar los valores de precisión y exhaustividad en la matriz de confusión.
 	\end{itemize}
 
 
@@ -661,7 +673,7 @@ Riesgo 5: precisión baja para detectar las distintas clases de nugget.
 \begin{itemize} 
 \item Req \#2: precisión del sistema de conteo.
 	\begin{itemize}
-	\item Verificación: verificar con videos de la línea de producción que el conteo se esta realizado correctamente.
+	\item Verificación: verificar con videos de la línea de producción que el conteo se está realizando correctamente.
 	\item Validación: demostrar al cliente el funcionamiento del sistema de conteo con la línea de producción activa.
 	\end{itemize}
 \end{itemize}
@@ -718,7 +730,7 @@ Riesgo 5: precisión baja para detectar las distintas clases de nugget.
 \item Req \#9: funcionamiento continuo del sistema.
 	\begin{itemize}
 	\item Verificación: simular fallos de la provisión de energía eléctrica y comprobar que el sistema no requiere manipulación para restablecerse.
-	\item Validación: asegurar que el cliente está satisfecho con el desempeño del sistema durante fallas en la provisión de energía eléctrica en la planta.
+	\item Validación: asegurar con el cliente que el sistema se restaura automáticamente cuando ocurre una falla en la provisión de energía eléctrica.
 	\end{itemize}
 \end{itemize}
 
@@ -726,7 +738,7 @@ Riesgo 5: precisión baja para detectar las distintas clases de nugget.
 \item Req \#10: documentación.
 	\begin{itemize}
 	\item Verificación: crear manuales de usuario detallados y asegurar que sea comprensible.
-	\item Validación: presentar la documentación al cliente y asegurar su satisfacción con a la misma.
+	\item Validación: obtener la aceptación de la documentación por parte de los colaboradores.
 	\end{itemize}
 \end{itemize}
 
